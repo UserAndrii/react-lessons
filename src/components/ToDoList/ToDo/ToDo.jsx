@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ToDo = ({ todo, check }) => {
+const ToDo = ({ todo, check, onDeleteTodo }) => {
   function handleCheck() {
     check(todo.id);
   }
@@ -21,6 +21,7 @@ const ToDo = ({ todo, check }) => {
             type="button"
             className="btn-close"
             aria-label="Close"
+            onClick={() => onDeleteTodo(todo.id)}
           ></button>
         </div>
       </div>
