@@ -23,7 +23,9 @@ class ToDoEditor extends Component {
           onChange={this.handleChange}
           style={{ marginRight: 10, marginBottom: 10 }}
         ></input>
-        <button type="submit ">Додати справу</button>
+        <button type="submit" className="btn btn-outline-success">
+          Додати справу
+        </button>
       </form>
     );
   }

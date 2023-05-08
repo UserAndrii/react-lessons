@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Value from './components/Value';
-import Controls from './components/Controls';
+import Button from './components/Button';
 
 class Counter extends Component {
   static defaultProps = {
@@ -32,10 +32,22 @@ class Counter extends Component {
         <div className="card bg-dark text-white " style={{ width: '600px' }}>
           <div className="card-body">
             <Value value={this.state.total} />
-            <Controls
-              onIncrement={this.handleClickIncrement}
-              onDecrement={this.handleClickDecrement}
-            />
+            <div className="d-flex justify-content-center px-5">
+              <Button
+                user={{ name: 'Alex' }}
+                handleClick={this.handleClickIncrement}
+                class="btn-outline-success me-5"
+              >
+                <i className="bi bi-plus-circle fs-1"></i>
+              </Button>
+              <Button
+                user={{ name: 'Alex' }}
+                handleClick={this.handleClickDecrement}
+                class="btn-outline-danger ms-5"
+              >
+                <i className="bi bi-dash-circle fs-1"></i>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

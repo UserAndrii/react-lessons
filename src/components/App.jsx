@@ -12,12 +12,10 @@ import { SignUpForm } from './SingUpForm/SingUpForm';
 class App extends Component {
   state = { isShowModal: false };
 
-  openModal = () => {
-    this.setState({ isShowModal: true });
-  };
-
-  closeModal = () => {
-    this.setState({ isShowModal: false });
+  toggleModal = () => {
+    this.setState(({ isShowModal }) => ({
+      isShowModal: !isShowModal,
+    }));
   };
 
   createUser = data => {
@@ -32,13 +30,13 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header open={this.openModal} />
-        <ToDoList />
+        <Header open={this.toggleModal} />
         {this.state.isShowModal && (
-          <Modal close={this.closeModal}>
-            <FormLogin close={this.closeModal} createUser={this.createUser} />
+          <Modal close={this.toggleModal}>
+            <FormLogin close={this.toggleModal} createUser={this.createUser} />
           </Modal>
         )}
+        <ToDoList />
         <Counter initialValue={100} />
         <Card />
         <SignUpForm onSubmit={values => console.table(values)} />
