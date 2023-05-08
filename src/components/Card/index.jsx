@@ -40,7 +40,7 @@ export const Card = () => {
   return (
     <div style={cardStyle}>
       {users.map(el => (
-        <div key={el.id} className="card" style={{ width: 380 }}>
+        <div key={el.id} className="card" style={{ width: 200 }}>
           <img
             src="https://cdn.pixabay.com/photo/2023/04/16/09/49/waterfall-7929685_1280.jpg"
             className="card-img-top"

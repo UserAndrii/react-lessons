@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import Notiflix from 'notiflix';
 
 import ToDo from './ToDo/ToDo';
 import ToDoEditor from './ToDoEditor/ToDoEditor';
@@ -7,9 +8,36 @@ import ToDoFiter from './ToDoFilter/ToDoFilter';
 import todo from '../../data/todo.json';
 
 class ToDoList extends Component {
-  state = { todoList: todo, filter: '' };
+  state = { todoList: [], filter: '' };
+
+  componentDidMount() {
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
+
+    if (parsedTodos !== null) {
+      this.setState({ todoList: parsedTodos });
+      return;
+    }
+
+    this.setState({ todoList: todo });
+  }
+
+  componentDidUpdate(_, prevState) {
+    const nextTodos = this.state.todoList;
+    const prevTodos = prevState.todoList;
+
+    if (nextTodos !== prevTodos) {
+      localStorage.setItem('todos', JSON.stringify(nextTodos));
+    }
+  }
 
   addTodo = title => {
+    if (title.length <= 0) {
+      return Notiflix.Notify.warning(
+        'The task cannot be created without a name, enter a name, please!'
+      );
+    }
+
     const todo = {
       id: nanoid(),
       title,
