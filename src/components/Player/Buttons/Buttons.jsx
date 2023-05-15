@@ -1,4 +1,5 @@
-import { forwardRef, useEffect } from 'react';
+import { forwardRef } from 'react';
+// import { useEffect } from 'react';
 
 const Buttons = forwardRef((props, ref) => {
   const { play, pause } = props;

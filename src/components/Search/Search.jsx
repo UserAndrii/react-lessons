@@ -25,10 +25,10 @@ class Search extends Component {
           <input
             className="form-control me-2 "
             type="search"
-            placeholder="Search"
             aria-label="Search"
             onChange={this.handleChange}
             value={this.state.value}
+            placeholder="Please enter a keyword and we will find news for you :)"
           />
           <button className="btn btn-outline-success" type="submit">
             Search
