@@ -8,9 +8,16 @@ import Modal from './Modal/Modal';
 import FormLogin from './FormLogin/FormLogin';
 import { Card } from './Card';
 import { SignUpForm } from './SingUpForm/SingUpForm';
+import Player from './Player/Player';
+import ContentInfo from './ContentInfo/ContentInfo';
+import Search from './Search/Search';
 
 class App extends Component {
-  state = { isShowModal: false };
+  state = { isShowModal: false, searchText: '' };
+
+  handleSearch = searchText => {
+    this.setState({ searchText });
+  };
 
   toggleModal = () => {
     this.setState(({ isShowModal }) => ({
@@ -31,6 +38,9 @@ class App extends Component {
     return (
       <div className="container">
         <Header open={this.toggleModal} />
+        <Search handleSearch={this.handleSearch} />
+        <ContentInfo searchText={this.state.searchText} />
+        <Player source="http://media.w3.org/2010/05/sintel/trailer.mp4" />
         {this.state.isShowModal && (
           <Modal close={this.toggleModal}>
             <FormLogin close={this.toggleModal} createUser={this.createUser} />

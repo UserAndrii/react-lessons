@@ -7,7 +7,6 @@ class Button extends Component {
   }
 
   render() {
-    console.log('render BTN');
     return (
       <button
         className={`btn ${this.props.class}`}
