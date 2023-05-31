@@ -11,6 +11,7 @@ import { SignUpForm } from './SingUpForm/SingUpForm';
 import Player from './Player/Player';
 import ContentInfo from './ContentInfo/ContentInfo';
 import Search from './Search/Search';
+import TestUseMemo from './TestUseMemo/TestUseMemo';
 
 const App = () => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -32,6 +33,7 @@ const App = () => {
   return (
     <div className="container">
       <Header open={toggleModal} />
+      <TestUseMemo />
       <Search handleSearch={handleSearch} />
       <ContentInfo searchText={searchText} />
       <Player source="http://media.w3.org/2010/05/sintel/trailer.mp4" />
