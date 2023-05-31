@@ -13,7 +13,7 @@ const Products = () => {
       try {
         setIsLoading(true);
         const data = await getProducts();
-        console.log('data :>> ', data);
+
         setProducts(data);
         setIsLoading(false);
       } catch (error) {
