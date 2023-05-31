@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 
 function complexCompute(number) {
-  for (let i = 0; i < 1000000000; i++) {}
+  // console.log('complex :>> ')
+  // for (let i = 0; i < 1000000000; i++) {}
   return number * 2;
 }
 
