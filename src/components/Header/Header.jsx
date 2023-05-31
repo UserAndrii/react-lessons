@@ -18,6 +18,9 @@ const Header = ({ open }) => {
           <NavLink className="nav-link text-white" to="/products">
             Products
           </NavLink>
+          <NavLink className="nav-link text-white" to="/player">
+            Player
+          </NavLink>
         </div>
         <button className="btn btn-outline-success" onClick={open}>
           Open Modal

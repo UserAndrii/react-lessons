@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import Header from '../Header/Header';
+import React, { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+
+import Header from '../Header/Header';
 import Modal from '../Modal/Modal';
 import FormLogin from '../FormLogin/FormLogin';
 
@@ -22,7 +23,9 @@ const Layout = () => {
   return (
     <div className="container">
       <Header open={openModal} />
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
       {isShowModal && (
         <Modal close={closeModal}>
           <FormLogin close={closeModal} createUser={createUser} />

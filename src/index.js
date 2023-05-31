@@ -5,7 +5,7 @@ import App from './components/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/react-lessons">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
