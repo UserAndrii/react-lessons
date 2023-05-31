@@ -8,6 +8,7 @@ const ProductsDetails = lazy(() => import('../pages/products/ProductsDetails'));
 const ProductsPage = lazy(() => import('../pages/products/ProductsPage'));
 const TodoDetails = lazy(() => import('../pages/TodoPage/TodoDetails'));
 const TodoPage = lazy(() => import('../pages/TodoPage/TodoPage'));
+const TodoReactReduxPage = lazy(() => import('../pages/TodoReactReduxPage'));
 const PlayerPage = lazy(() => import('../pages/PlayerPage'));
 
 const App = () => {
@@ -17,10 +18,8 @@ const App = () => {
         <Route index element={<HomePage />} />
         <Route path="news" element={<NewsPage />} />
         <Route path="todo" element={<TodoPage />} />
+        <Route path="todo-react-redux" element={<TodoReactReduxPage />} />
         <Route path="todo/:todoId" element={<TodoDetails />} />
-        {/* <Route path='todo' element={<TodoPage />}>
-					<Route path=':todoId' element={<TodoDetails />} />
-				</Route> */}
         <Route path="products" element={<ProductsPage />} />
         <Route
           path="products/:id"

@@ -15,6 +15,9 @@ const Header = ({ open }) => {
           <NavLink className="nav-link text-white" to="/todo">
             Todo
           </NavLink>
+          <NavLink className="nav-link text-white" to="/todo-react-redux">
+            Todo-React-Redux
+          </NavLink>
           <NavLink className="nav-link text-white" to="/products">
             Products
           </NavLink>
